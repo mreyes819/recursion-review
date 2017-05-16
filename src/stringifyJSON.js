@@ -15,10 +15,10 @@ var stringifyJSON = function(obj) {
   } else if (Array.isArray(obj)) {
     let string = Array.from(obj).map(el => stringifyJSON(el));
     return `[${string}]`;
-  } else if (typeof obj === 'object' && obj){ 
+  } else if (typeof obj === 'object' && obj) { 
     var arr = [];
     for (var key in obj) {
-      if(obj[key] === undefined || typeof obj[key] === 'function'){
+      if (obj[key] === undefined || typeof obj[key] === 'function') {
         continue;
       }
       arr.push(stringifyJSON(key) + ':' + stringifyJSON(obj[key]));
